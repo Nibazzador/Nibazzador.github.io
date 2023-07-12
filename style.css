@@ -31,6 +31,7 @@ html {
 
 body {
   background-color: rgb(var(--bg-color-1));
+  color: rgb(var(--tx-color));
 }
 
 body.light-theme {
@@ -55,4 +56,11 @@ body.dark-theme {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/* Content */
+.arrow-nav {
+  display: block;
+  width: 2rem;
+  height: 2rem;
 }
