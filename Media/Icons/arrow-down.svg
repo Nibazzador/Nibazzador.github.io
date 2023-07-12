@@ -10,7 +10,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="arrow-up-dark.svg"
+   sodipodi:docname="jari.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.4204826"
-     inkscape:cx="-228.30909"
+     inkscape:cx="-197.39223"
      inkscape:cy="332.95076"
      inkscape:window-width="1680"
      inkscape:window-height="987"
@@ -43,10 +43,9 @@
      id="layer1">
     <g
        id="g406"
-       transform="matrix(1.8141904,0,0,1.8141904,-42.595109,-47.313978)"
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1">
+       transform="matrix(-1.8141904,0,0,-1.8141904,252.59511,257.31397)">
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3;stroke-opacity:1"
+         style="fill:#000000;stroke:#000000;stroke-width:3"
          id="rect236"
          width="8.8093214"
          height="96.273308"
@@ -56,14 +55,12 @@
          ry="0" />
       <g
          id="g397"
-         transform="translate(-9.9950868)"
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1">
+         transform="translate(-9.9950868)">
         <g
            id="g392"
-           transform="translate(9.1239407,-27.057203)"
-           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1">
+           transform="translate(9.1239407,-27.057203)">
           <rect
-             style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.32652;stroke-opacity:1"
+             style="fill:#000000;stroke:#000000;stroke-width:2.32652"
              id="rect236-4"
              width="9.4827986"
              height="53.787804"
@@ -73,7 +70,7 @@
              ry="0"
              transform="rotate(-45)" />
           <rect
-             style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.32652;stroke-opacity:1"
+             style="fill:#000000;stroke:#000000;stroke-width:2.32652"
              id="rect236-4-3"
              width="9.4827986"
              height="53.787804"

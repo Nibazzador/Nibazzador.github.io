@@ -16,19 +16,6 @@ html {
   scroll-behavior: smooth;
 }
 
-:root {
-  --br: 1px solid var(--tx-color);
-  --br-rad: 16px;
-
-  --fs-100: 0.5rem;
-  --fs-300: 1rem;
-  --fs-400: 1.25rem;
-  --fs-500: 1.5rem;
-  --fs-600: 2rem;
-  --fs-700: 4rem;
-  --fs-800: 8rem;
-}
-
 body {
   background-color: rgb(var(--bg-color-1));
   color: rgb(var(--tx-color));
@@ -39,12 +26,32 @@ body.light-theme {
   --bg-color-2: 255, 255, 255;
   --bg-color-3: 205, 205, 205;
   --tx-color: 17, 17, 17;
+
+  --br: 1px solid rgb(var(--tx-color));
 }
 body.dark-theme {
   --bg-color-1: 33, 33, 33;
   --bg-color-2: 23, 23, 23;
   --bg-color-3: 55, 55, 55;
   --tx-color: 255, 255, 255;
+
+  --br: 1px solid rgb(var(--tx-color));
+}
+
+body.dark-theme .icon {
+  filter: invert(1);
+}
+
+:root {
+  --br-rad: 16px;
+
+  --fs-100: 0.5rem;
+  --fs-300: 1rem;
+  --fs-400: 1.25rem;
+  --fs-500: 1.5rem;
+  --fs-600: 2rem;
+  --fs-700: 4rem;
+  --fs-800: 8rem;
 }
 
 /* Utility classes */
@@ -60,7 +67,24 @@ body.dark-theme {
 
 /* Content */
 .arrow-nav {
-  display: block;
+  padding: 0.5rem;
+
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+
+  border: var(--br);
+  border-radius: 50px;
+
+  transition: scale 0.5s;
+  z-index: 999;
+}
+
+#arrow-nav-icon {
   width: 2rem;
   height: 2rem;
+}
+
+.arrow-nav:hover {
+  scale: 1.3;
 }
