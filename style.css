@@ -131,6 +131,7 @@ main {
 }
 
 .heading h2 {
+  color: white;
   font-size: var(--fs-300);
   text-align: center;
   text-decoration: underline;
@@ -193,14 +194,16 @@ main {
   background-size: cover;
   background-position: right;
 }
+h1,
+.hero-p {
+  text-align: center;
+  color: white;
+}
 h1 {
   margin-top: clamp(1rem, 10vw, 7rem);
-
-  text-align: center;
   font-size: clamp(var(--fs-400), 10vw, var(--fs-800));
 }
 .hero-p {
-  text-align: center;
   font-size: clamp(var(--fs-125), 4vw, var(--fs-300));
 }
 .hero-photo {
@@ -233,6 +236,11 @@ nav a {
   gap: 1rem;
 
   margin-left: 2rem;
+}
+
+nav a h3 {
+  font-size: clamp(var(--fs-125), 4vw, var(--fs-200));
+  text-align: center;
 }
 
 .icon {
@@ -345,7 +353,6 @@ footer p.copyright {
   .icon {
     height: 6rem;
     width: 6rem;
-    filter: drop-shadow(5px 5px 10px rgb(var(--tx-color)));
   }
 
   .nav-links > a:nth-child(1) {
