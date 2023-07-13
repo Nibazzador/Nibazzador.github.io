@@ -26,3 +26,55 @@ cards.forEach(function (card) {
     );
   });
 });
+
+/////////////////////////// LINK BUTTON /////////////////////////////////////
+navButton = document.querySelector(".arrow-nav");
+
+let observers = [];
+let observerOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: [1],
+};
+const targets = [
+  "#hero",
+  "#nav",
+  "#front-end",
+  "#kuvaus",
+  "#tyokokemus",
+  "#yhteystiedot",
+  "#mina",
+  "#footer",
+];
+let callbackCount = 0;
+const changeHref = (ez) => {
+  if (ez !== "footer") {
+    navButton.setAttribute("href", targets[targets.indexOf(`#${ez}`) + 1]);
+    navButton.classList.remove("up");
+  } else {
+    navButton.setAttribute("href", "#hero");
+    navButton.classList.add("up");
+  }
+};
+
+intersectionCallback = (entries) => {
+  entries.forEach((entry) => {
+    changeHref(entry.target.id);
+    callbackCount++;
+    if (callbackCount === 8) {
+      navButton.setAttribute("href", "#nav");
+    }
+  });
+};
+for (let i = 0; i < 8; i++) {
+  observers[i] = new IntersectionObserver(
+    intersectionCallback,
+    observerOptions
+  );
+  observers[i].observe(document.querySelector(`${targets[i]}`));
+}
+navButton.addEventListener("click", () => {
+  if (window.location.href.split("#")[1] === navButton.href.split("#")[1]) {
+    changeHref(navButton.href.split("#")[1]);
+  }
+});
