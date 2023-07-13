@@ -78,3 +78,20 @@ navButton.addEventListener("click", () => {
     changeHref(navButton.href.split("#")[1]);
   }
 });
+
+/////////////////////////// HIDE HEROPHOTO IF OVERLAPS TEXT /////////////////////////////////////
+heroImg = document.querySelector(".hero-photo");
+heroPara = document.querySelector(".hero-p");
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 1281) {
+    console.log("ASD");
+    if (window.innerHeight * 0.4 < heroPara.getBoundingClientRect().bottom) {
+      heroImg.style.display = "none";
+    } else {
+      heroImg.style.display = "block";
+    }
+  } else {
+    heroImg.style.display = "block";
+  }
+});
