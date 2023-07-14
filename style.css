@@ -233,7 +233,11 @@ nav a {
   align-items: center;
   gap: 1rem;
 
-  margin-left: 2rem;
+  transition: scale 0.5s;
+}
+
+nav a:hover {
+  scale: 1.01;
 }
 
 nav a h3 {
@@ -243,6 +247,7 @@ nav a h3 {
 
 .icon {
   width: 4rem;
+  height: 4rem;
 }
 
 /* GALLERIES */
@@ -331,7 +336,7 @@ footer p.copyright {
 }
 
 /* MEDIA QUERIES */
-@media (min-width: 1281px) and (pointer: fine) {
+@media (min-width: 1281px) and (pointer: fine) and (min-height: 800px) {
   nav {
     overflow: hidden;
     position: relative;
@@ -362,6 +367,10 @@ footer p.copyright {
     border-radius: var(--br-rad);
 
     transition: transform 1s, scale 0.5s, z-index 0.5s;
+  }
+
+  .nav-links > a > h3 {
+    margin: 0 1rem;
   }
 
   .icon {
