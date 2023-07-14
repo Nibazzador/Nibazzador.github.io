@@ -109,6 +109,7 @@ main {
 .hd4,
 .hd5 {
   background-size: cover;
+  background-position: center;
 }
 
 .hd1 {
@@ -126,7 +127,6 @@ main {
 }
 .hd5 {
   background-image: url(Media/s-h2-bg/s5.png);
-  background-position: 0 20%;
   background-attachment: fixed;
 }
 
@@ -245,6 +245,21 @@ nav a h3 {
 
 .icon {
   width: 4rem;
+}
+
+/* GALLERIES */
+.kuvagalleria,
+.videogalleria {
+  background-color: rgb(var(--bg-color-3));
+}
+
+.kuvagalleria {
+  aspect-ratio: 1/1;
+}
+
+.videogalleria {
+  aspect-ratio: 16/9;
+  margin-bottom: 0.5rem;
 }
 
 /* MINA */

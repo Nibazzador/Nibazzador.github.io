@@ -73,16 +73,12 @@ window.addEventListener("scroll", () => {
   });
   // Now activeIndex is the index of last section that is on/above screen.
   navButton.href = targets[activeIndex + 1];
-  if (targets[activeIndex + 1] === "#footer") {
-    if (
-      Math.round(sections[7].getBoundingClientRect().bottom) ===
-      window.innerHeight
-    ) {
-      navButton.href = "#hero";
-      navButton.classList.add("up");
-    } else {
-      navButton.classList.remove("up");
-    }
+  if (
+    Math.round(sections[7].getBoundingClientRect().bottom) ===
+    window.innerHeight
+  ) {
+    navButton.href = "#hero";
+    navButton.classList.add("up");
   } else {
     navButton.classList.remove("up");
   }
@@ -99,8 +95,11 @@ navButton.addEventListener("click", () => {
   );
   // Changes href to next section if href = current section where user is.
   // Happens when user has used navButton but hasn't scrolled since.
-  // 16 is scroll-padding-top.
-  if (sections[currentSectionIndex].getBoundingClientRect().top === 16) {
+  // Numbers are for different rems, since scroll-padding-top is 1rem.
+  if (
+    sections[currentSectionIndex].getBoundingClientRect().top < 100 &&
+    0 < sections[currentSectionIndex].getBoundingClientRect().top
+  ) {
     navButton.href = `#${sections[currentSectionIndex + 1].id}`;
   }
 });
