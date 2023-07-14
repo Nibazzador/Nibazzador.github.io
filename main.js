@@ -73,6 +73,8 @@ window.addEventListener("scroll", () => {
   });
   // Now activeIndex is the index of last section that is on/above screen.
   navButton.href = targets[activeIndex + 1];
+
+  // If whole footer is shown.
   if (
     Math.round(sections[7].getBoundingClientRect().bottom) ===
     window.innerHeight
