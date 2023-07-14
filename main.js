@@ -68,7 +68,10 @@ window.addEventListener("scroll", () => {
     }
   });
   navButton.href = targets[activeIndex + 1];
-  if (targets[activeIndex + 1] === "#footer") {
+  if (
+    targets[activeIndex + 1] === "#footer" ||
+    navButton.href.slice(navButton.href.lastIndexOf("/")) === "/undefined"
+  ) {
     if (
       Math.round(sections[7].getBoundingClientRect().bottom) ===
       window.innerHeight
