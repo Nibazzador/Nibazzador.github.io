@@ -15,6 +15,7 @@ heroImg = document.querySelector(".hero-photo");
 heroPara = document.querySelector(".hero-p");
 
 window.addEventListener("resize", () => {
+  // 1281 = media query to different layout.
   if (window.innerWidth < 1281) {
     if (window.innerHeight * 0.4 < heroPara.getBoundingClientRect().bottom) {
       heroImg.style.display = "none";
@@ -22,18 +23,21 @@ window.addEventListener("resize", () => {
       heroImg.style.display = "block";
     }
   } else {
+    // Without this img stays hidden when media query kicks in.
     heroImg.style.display = "block";
   }
 });
 
 //////////////////////////// NAV CARDS Z-INDEX ////////////////////////////
 
-let cards = document.querySelectorAll(".nav-links > a");
+const cards = document.querySelectorAll(".nav-links > a");
 let cardsOrder = Array.from(cards);
 cards.forEach(function (card) {
   card.addEventListener("mouseover", function () {
+    // Deletes just hovered card and then adds it to first position.
     cardsOrder = cardsOrder.filter((c) => c !== card);
     cardsOrder.unshift(card);
+    // Sets z-index for every card with formula: 20-index of card in cardsOrder array.
     cardsOrder.forEach(
       (card) =>
         (cardsOrder[cardsOrder.indexOf(card)].style.zIndex = `${
@@ -63,15 +67,13 @@ let activeIndex = 0;
 
 window.addEventListener("scroll", () => {
   sections.forEach((section) => {
-    if (section.getBoundingClientRect().top <= 0) {
+    if (section.getBoundingClientRect().top <= 16) {
       activeIndex = targets.indexOf(`#${section.id}`);
     }
   });
+  // Now activeIndex is the index of last section that is on/above screen.
   navButton.href = targets[activeIndex + 1];
-  if (
-    targets[activeIndex + 1] === "#footer" ||
-    navButton.href.slice(navButton.href.lastIndexOf("/")) === "/undefined"
-  ) {
+  if (targets[activeIndex + 1] === "#footer") {
     if (
       Math.round(sections[7].getBoundingClientRect().bottom) ===
       window.innerHeight
@@ -84,12 +86,20 @@ window.addEventListener("scroll", () => {
   } else {
     navButton.classList.remove("up");
   }
+  if (navButton.href.slice(navButton.href.lastIndexOf("/")) === "/undefined") {
+    // Happens if footer takes 100% of screen.
+    navButton.href = "#hero";
+    navButton.classList.add("up");
+  }
 });
 
 navButton.addEventListener("click", () => {
   const currentSectionIndex = targets.indexOf(
     navButton.href.slice(navButton.href.lastIndexOf("#"))
   );
+  // Changes href to next section if href = current section where user is.
+  // Happens when user has used navButton but hasn't scrolled since.
+  // 16 is scroll-padding-top.
   if (sections[currentSectionIndex].getBoundingClientRect().top === 16) {
     navButton.href = `#${sections[currentSectionIndex + 1].id}`;
   }
