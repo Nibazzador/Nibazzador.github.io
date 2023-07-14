@@ -15,8 +15,8 @@ heroImg = document.querySelector(".hero-photo");
 heroPara = document.querySelector(".hero-p");
 
 window.addEventListener("resize", () => {
-  // 1281 = media query to different layout.
-  if (window.innerWidth < 1281) {
+  // 1281 & 500 = media query to different layout.
+  if (window.innerWidth < 1281 || window.innerHeight < 500) {
     if (window.innerHeight * 0.4 < heroPara.getBoundingClientRect().bottom) {
       heroImg.style.display = "none";
     } else {
@@ -104,7 +104,10 @@ navButton.addEventListener("click", () => {
   ) {
     navButton.href = `#${sections[currentSectionIndex + 1].id}`;
   }
-  if (navButton.href.slice(navButton.href.lastIndexOf("#")) === "#nav") {
+  if (
+    navButton.href.slice(navButton.href.lastIndexOf("#")) === "#nav" &&
+    window.matchMedia("(min-width: 1281px) and (pointer: fine)").matches
+  ) {
     document.getElementsByTagName("html")[0].style.scrollPaddingTop = "0";
   } else {
     document.getElementsByTagName("html")[0].style.scrollPaddingTop = "1rem";
