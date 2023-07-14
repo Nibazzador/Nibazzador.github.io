@@ -104,4 +104,9 @@ navButton.addEventListener("click", () => {
   ) {
     navButton.href = `#${sections[currentSectionIndex + 1].id}`;
   }
+  if (navButton.href.slice(navButton.href.lastIndexOf("#")) === "#nav") {
+    document.getElementsByTagName("html")[0].style.scrollPaddingTop = "0";
+  } else {
+    document.getElementsByTagName("html")[0].style.scrollPaddingTop = "1rem";
+  }
 });
