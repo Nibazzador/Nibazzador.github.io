@@ -113,3 +113,67 @@ navButton.addEventListener("click", () => {
     document.getElementsByTagName("html")[0].style.scrollPaddingTop = "1rem";
   }
 });
+
+//////////////////////////////// PHOTOGALLERY ///////////////////////
+const overlay = document.getElementsByClassName("overlay")[0];
+const overlayPhoto = document.getElementsByClassName("overlay-photo")[0];
+const counterImg = document.getElementsByClassName("counter-img")[0];
+const close = document.getElementsByClassName("close")[0];
+const prevImg = document.getElementsByClassName("prev-img")[0];
+const nextImg = document.getElementsByClassName("next-img")[0];
+
+close.addEventListener("click", () => {
+  overlayPhoto.innerHTML = "";
+  overlay.style.display = "none";
+});
+prevImg.addEventListener("click", () => {
+  let goToNumber = currentNumber - 1;
+  if (goToNumber === 0) {
+    goToNumber = 24;
+  }
+  addOverlay(`${goToNumber}.jpg`);
+});
+nextImg.addEventListener("click", () => {
+  let goToNumber = currentNumber + 1;
+  if (goToNumber === 25) {
+    goToNumber = 1;
+  }
+  addOverlay(`${goToNumber}.jpg`);
+});
+
+const addOverlay = (goTo) => {
+  currentNumber = parseInt(goTo.slice(0, goTo.lastIndexOf(".")));
+
+  overlay.style.display = "block";
+  overlayPhoto.innerHTML = "";
+
+  counterImg.textContent = `${currentNumber} / 24`;
+
+  const img = document.createElement("img");
+  img.setAttribute("src", `Media/Photos/${goTo}`);
+  img.setAttribute(
+    "srcset",
+    `Media/Photos/${currentNumber}-216w.jpg   216w,
+    Media/Photos/${currentNumber}-432w.jpg   432w,
+    Media/Photos/${currentNumber}-864w.jpg   864w,
+    Media/Photos/${currentNumber}-1296w.jpg 1296w,
+    Media/Photos/${currentNumber}.jpg       2592w`
+  );
+  img.setAttribute("alt", "Ottamani kuva");
+  overlayPhoto.appendChild(img);
+};
+
+const imgs = document.querySelectorAll(".img-div > img");
+imgs.forEach(function (img) {
+  const loaded = () => {
+    img.classList.add("loaded");
+  };
+  if (img.complete) {
+    loaded();
+  } else {
+    img.addEventListener("load", loaded);
+  }
+  img.addEventListener("click", () => {
+    addOverlay(img.src.slice(img.src.lastIndexOf("/") + 1));
+  });
+});
