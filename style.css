@@ -299,6 +299,11 @@ nav a h3 {
   background-color: rgba(0, 0, 0, 0.69);
 }
 
+.overlay > button {
+  background: none;
+  border: transparent;
+}
+
 .overlay-photo {
   width: 90%;
   height: 90%;
