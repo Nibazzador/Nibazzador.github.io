@@ -256,12 +256,16 @@ nav a h3 {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  opacity: 0;
-
   transition: scale 0.5s, opacity 1s;
 }
 
-.img-div > img.loaded {
+.img-div > img,
+.overlay-photo > img {
+  opacity: 0;
+}
+
+.img-div > img.loaded,
+.overlay-photo > img.loaded {
   opacity: 100%;
 }
 
@@ -357,6 +361,55 @@ nav a h3 {
 
 .next-img {
   right: 1rem;
+}
+
+.load-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 1rem;
+}
+
+.loading-ball {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background-color: rgb(var(--tx-color), 0.25);
+}
+
+@keyframes loadball {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  15% {
+    scale: 1.2;
+    opacity: 0.9;
+  }
+  30% {
+    scale: 1.4;
+    opacity: 0.8;
+  }
+  45% {
+    scale: 1.2;
+    opacity: 0.9;
+  }
+  60% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.load-animation > .loading-ball:nth-child(1) {
+  animation: loadball 1.5s linear 0s infinite;
+}
+.load-animation > .loading-ball:nth-child(2) {
+  animation: loadball 1.5s linear 0.5s infinite;
+}
+.load-animation > .loading-ball:nth-child(3) {
+  animation: loadball 1.5s linear 1s infinite;
 }
 
 .videogalleria {

@@ -121,22 +121,23 @@ const counterImg = document.getElementsByClassName("counter-img")[0];
 const close = document.getElementsByClassName("close")[0];
 const prevImg = document.getElementsByClassName("prev-img")[0];
 const nextImg = document.getElementsByClassName("next-img")[0];
+const loadingBalls = document.querySelectorAll(".loading-ball");
 
 close.addEventListener("click", () => {
   overlayPhoto.innerHTML = "";
   overlay.style.display = "none";
 });
 prevImg.addEventListener("click", () => {
-  let goToNumber = currentNumber - 1;
-  if (goToNumber === 0) {
-    goToNumber = 24;
+  let goToNumber = currentNumber + 1;
+  if (goToNumber === 25) {
+    goToNumber = 1;
   }
   addOverlay(`${goToNumber}.jpg`);
 });
 nextImg.addEventListener("click", () => {
-  let goToNumber = currentNumber + 1;
-  if (goToNumber === 25) {
-    goToNumber = 1;
+  let goToNumber = currentNumber - 1;
+  if (goToNumber === 0) {
+    goToNumber = 24;
   }
   addOverlay(`${goToNumber}.jpg`);
 });
@@ -147,7 +148,7 @@ const addOverlay = (goTo) => {
   overlay.style.display = "block";
   overlayPhoto.innerHTML = "";
 
-  counterImg.textContent = `${currentNumber} / 24`;
+  counterImg.textContent = `${25 - currentNumber} / 24`;
 
   const img = document.createElement("img");
   img.setAttribute("src", `Media/Photos/${goTo}`);
@@ -161,6 +162,20 @@ const addOverlay = (goTo) => {
   );
   img.setAttribute("alt", "Ottamani kuva");
   overlayPhoto.appendChild(img);
+  const loaded = () => {
+    img.classList.add("loaded");
+    loadingBalls.forEach((ball) => {
+      ball.style.display = "none";
+    });
+  };
+  if (img.complete) {
+    loaded();
+  } else {
+    img.addEventListener("load", loaded);
+    loadingBalls.forEach((ball) => {
+      ball.style.display = `block`;
+    });
+  }
 };
 
 const imgs = document.querySelectorAll(".img-div > img");
