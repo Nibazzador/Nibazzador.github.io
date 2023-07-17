@@ -14,7 +14,7 @@ if (
 heroImg = document.querySelector(".hero-photo");
 heroPara = document.querySelector(".hero-p");
 
-window.addEventListener("resize", () => {
+const checkOverlap = () => {
   // 1281 & 500 = media query to different layout.
   if (window.innerWidth < 1281 || window.innerHeight < 500) {
     if (window.innerHeight * 0.4 < heroPara.getBoundingClientRect().bottom) {
@@ -26,7 +26,10 @@ window.addEventListener("resize", () => {
     // Without this img stays hidden when media query kicks in.
     heroImg.style.display = "block";
   }
-});
+};
+
+checkOverlap();
+window.addEventListener("resize", checkOverlap);
 
 //////////////////////////// NAV CARDS Z-INDEX ////////////////////////////
 
