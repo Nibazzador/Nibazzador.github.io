@@ -27,7 +27,6 @@ const checkOverlap = () => {
     heroImg.style.display = "block";
   }
 };
-
 checkOverlap();
 window.addEventListener("resize", checkOverlap);
 
@@ -92,6 +91,15 @@ window.addEventListener("scroll", () => {
     navButton.href = "#hero";
     navButton.classList.add("up");
   }
+
+  // HERO IMG OPACITY
+  heroImg.style.opacity = `${Math.floor(
+    100 - (document.documentElement.scrollTop / window.innerHeight) * 200
+  )}%`;
+  heroImg.style.top = `${Math.floor(
+    window.innerHeight * 0.4 +
+      (document.documentElement.scrollTop / window.innerHeight) * 500
+  )}px`;
 });
 
 navButton.addEventListener("click", () => {

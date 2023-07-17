@@ -220,6 +220,10 @@ h1 {
 }
 
 /* NAV */
+nav {
+  position: relative;
+}
+
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -497,6 +501,7 @@ footer p.copyright {
     width: 100%;
     display: grid;
     place-items: center;
+    background-color: rgb(var(--bg-color-1));
   }
   .nav-links {
     min-height: 0;
