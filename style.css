@@ -66,10 +66,6 @@ body.dark-theme .icon {
   --fw-400: 400;
 }
 
-#page {
-  transition: opacity 1s;
-}
-
 /* Utility classes */
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -195,9 +191,9 @@ nav {
 /* HERO */
 #hero {
   overflow-x: hidden;
+  background-image: url(Media/hero-bg.JPG);
   background-size: cover;
   background-position: right;
-  background-attachment: fixed;
 }
 h1,
 .hero-p {
