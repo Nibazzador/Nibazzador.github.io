@@ -194,6 +194,7 @@ nav {
   background-image: url(Media/hero-bg.JPG);
   background-size: cover;
   background-position: right;
+  background-attachment: fixed;
 }
 h1,
 .hero-p {
