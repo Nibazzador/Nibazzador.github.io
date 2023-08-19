@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-1: #fff;
+  --color-2: #ddd;
+  --color-3: #111;
+  --color-text: #000;
+  --border: 1px solid var(--color-3);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text);
+}
+
+input {
+  border: var(--border);
+  border-radius: 3px;
+  padding: 2px;
+  max-width: 70vw;
+}
+
+form {
+  margin: 1rem;
+  border: var(--border);
+  border-radius: 5px;
+  background-color: var(--color-2);
+  display: flex;
+  flex-flow: row wrap;
+}
+
+span {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+h1,
+p {
+  margin: 1rem;
+}
+
+#send {
+  align-self: center;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+main {
+  min-height: 100vh;
+  margin: 0 auto;
+  width: min(100%, 800px);
+}
+
+.joke {
+  border: var(--border);
+  border-radius: 5px;
+  background-color: var(--color-2);
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: fit-content;
+}
+
+a {
+  color: var(--color-text);
+}
+
+footer {
+  background-color: var(--color-2);
+  padding: 1rem;
+  position: relative;
+  border-top: var(--border);
+}
+
+footer p {
+  text-align: center;
+}
+
+footer p.copy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+}

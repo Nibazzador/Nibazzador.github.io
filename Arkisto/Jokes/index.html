@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haha Fun Jokes</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <main id="main">
+      <h1>Fun Jokes, Haha</h1>
+      <p>
+        In this site you get funny (not) Chuck Norris jokes with name(s) you
+        choose.
+      </p>
+      <p>
+        None of the jokes are mine. (so don't cancel me plz) They come from
+        <a href="https://api.chucknorris.io/">Chuck Norris Jokes Api</a>
+      </p>
+      <form id="form">
+        <span>
+          <label for="firstName">First Name</label>
+          <input
+            id="firstName"
+            name="firstName"
+            type="text"
+            placeholder="Eg. James"
+            required
+        /></span>
+        <span>
+          <label for="lastName">Last Name (optional)</label>
+          <input
+            id="lastName"
+            name="lastName"
+            type="text"
+            placeholder="Eg. Blofeld"
+        /></span>
+        <span
+          ><label for="category">Category</label
+          ><select name="category" id="category">
+            <option value="all">All</option>
+            <option value="animal">Animal</option>
+            <option value="career">Career</option>
+            <option value="celebrity">Celebrity</option>
+            <option value="dev">Dev</option>
+            <option value="explicit">Explicit</option>
+            <option value="fashion">Fashion</option>
+            <option value="food">Food</option>
+            <option value="history">History</option>
+            <option value="money">Money</option>
+            <option value="movie">Movie</option>
+            <option value="music">Music</option>
+            <option value="political">Political</option>
+            <option value="religion">Religion</option>
+            <option value="science">Science</option>
+            <option value="sport">Sport</option>
+            <option value="travel">Travel</option>
+          </select></span
+        >
+        <input id="send" type="submit" value="Get Jokes" />
+      </form>
+      <section>
+        <p id="temporary-info">
+          After sending your name(s), your jokes comes below:
+        </p>
+        <hr />
+      </section>
+      <section class="jokes"></section>
+    </main>
+    <footer>
+      <p>
+        None of the jokes are mine. (so don't cancel me plz) They come from
+        <a href="https://api.chucknorris.io/">Chuck Norris Jokes Api</a>
+      </p>
+      <p class="copy">
+        <a href="https://nibazzador.github.io/">&copy; Niila Vesterinen 2023</a>
+      </p>
+    </footer>
+  </body>
+</html>

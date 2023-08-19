@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-1: #a0c49d;
+  --color-2: #c4d7b2;
+  --color-3: #e1ecc8;
+  --color-4: 255, 0, 0;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: var(--color-1);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-2);
+  border-bottom: 3px solid var(--color-3);
+}
+
+nav ul {
+  display: flex;
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+p {
+  margin: 5px 0;
+}
+
+li {
+  list-style: none;
+  padding: 1rem;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+@media only screen and (max-width: 300px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+h1,
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: black;
+}
+
+a:is(:hover, :target) {
+  color: rgb(var(--color-4), 0.69);
+}
+
+section {
+  border: 2px solid var(--color-3);
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--color-2);
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+footer {
+  height: 100px;
+  background-color: var(--color-2);
+  text-align: center;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+footer .copy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+}

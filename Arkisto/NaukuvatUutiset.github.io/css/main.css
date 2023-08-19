@@ -1,0 +1,188 @@
+body {
+  margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: gray;
+  background-color: lightgray;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.divider {
+  width: 100%;
+  background-color: #333;
+  height: 48px;
+}
+
+a {
+  color: gray;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1080px) {
+  .grid-text-box {
+    margin: 2%;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .home-text {
+    display: grid;
+    gap: 1rem;
+    margin: 0.5rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-text-box {
+    margin: 0;
+  }
+
+  .grid-col-span3 {
+    grid-column: span 3;
+  }
+
+  .grid-col-span2 {
+    grid-column: span 2;
+  }
+
+  .grid-row-span2 {
+    grid-row: span 2;
+  }
+}
+
+.grid-text-box {
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  background-color: white;
+  border-style: double;
+}
+
+.text-box {
+  margin: 2%;
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  background-color: white;
+  border-style: double;
+}
+
+.home-photo {
+  margin-top: 48px;
+  width: 100%;
+  max-height: calc(100vh - 48px);
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.home-suggestion-title {
+  text-align: center;
+  margin-top: 0;
+}
+
+.home-suggestion {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.home-suggestion iframe {
+  border: none;
+}
+
+.home-suggestion h2 {
+  margin-bottom: 1rem;
+}
+
+.mems-videos iframe {
+  padding: 1.25rem;
+  border: none;
+}
+
+.mems-videos {
+  text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .home-suggestion iframe,
+  .home-suggestion object,
+  .home-suggestion embed,
+  .mems-videos iframe,
+  .mems-videos object,
+  .mems-videos embed {
+    width: 90vw;
+    height: 50.625vw;
+    margin-bottom: 2.5vw;
+    text-align: center;
+  }
+
+  .mems-videos iframe {
+    padding: 0;
+    margin-top: 5vw;
+  }
+
+  .home-suggestion {
+    margin-bottom: 0;
+  }
+}
+
+.TBA p,
+.TBA h1,
+.TBA h2,
+.Pro p,
+.Pro h1,
+.Pro h2 {
+  padding-left: 10px;
+}
+
+.asd {
+  display: flex;
+}
+
+.asd-text {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: gray;
+}
+
+.asd-text a {
+  text-decoration: none;
+}
+
+.add {
+  position: sticky;
+  top: 100px;
+  margin-bottom: 100px;
+  width: 184px;
+  height: 662px;
+}
+
+.add-right {
+  margin-right: 100px;
+}
+
+.add-left {
+  margin-left: 100px;
+}
+
+.add-phone {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .add-phone {
+    max-width: 90vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .add {
+    display: none;
+  }
+}

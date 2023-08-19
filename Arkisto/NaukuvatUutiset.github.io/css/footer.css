@@ -1,0 +1,37 @@
+footer {
+  width: 100%;
+  background-color: #333;
+  height: 18.75rem;
+  position: relative;
+  text-align: center;
+}
+
+.footer-title {
+  color: white;
+  padding-top: 1.25rem;
+  margin-top: 0;
+}
+
+.footer-year {
+  color: white;
+}
+
+.footer-logo {
+  width: 8rem;
+  height: 8rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-contacts {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-rights {
+  margin-left: 1rem;
+  position: absolute;
+  bottom: -0.5rem;
+  left: -0.5rem;
+}
