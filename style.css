@@ -208,7 +208,7 @@ h1 {
 .hero-p {
   font-size: clamp(var(--fs-125), 4vw, var(--fs-300));
 }
-.hero-photo {
+/* .hero-photo {
   max-height: 60vh;
   max-height: 60svh;
 
@@ -217,7 +217,7 @@ h1 {
 
   position: absolute;
   bottom: 0;
-}
+} */
 
 /* NAV */
 nav {
@@ -591,9 +591,9 @@ footer p.copyright {
 }
 
 @media only screen and (min-width: 1281px) and (min-height: 500px) {
-  .hero-photo {
+  /* .hero-photo {
     left: 20%;
-  }
+  } */
 
   .hero-p {
     position: absolute;

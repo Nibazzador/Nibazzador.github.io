@@ -10,25 +10,25 @@ if (
   document.body.classList.add("light-theme");
 }
 
-/////////////////////////// HIDE HEROPHOTO IF OVERLAPS TEXT /////////////////////////////////////
-heroImg = document.querySelector(".hero-photo");
-heroPara = document.querySelector(".hero-p");
+// /////////////////////////// HIDE HEROPHOTO IF OVERLAPS TEXT /////////////////////////////////////
+// heroImg = document.querySelector(".hero-photo");
+// heroPara = document.querySelector(".hero-p");
 
-const checkOverlap = () => {
-  // 1281 & 500 = media query to different layout.
-  if (window.innerWidth < 1281 || window.innerHeight < 500) {
-    if (window.innerHeight * 0.4 < heroPara.getBoundingClientRect().bottom) {
-      heroImg.style.display = "none";
-    } else {
-      heroImg.style.display = "block";
-    }
-  } else {
-    // Without this img stays hidden when media query kicks in.
-    heroImg.style.display = "block";
-  }
-};
-checkOverlap();
-window.addEventListener("resize", checkOverlap);
+// const checkOverlap = () => {
+//   // 1281 & 500 = media query to different layout.
+//   if (window.innerWidth < 1281 || window.innerHeight < 500) {
+//     if (window.innerHeight * 0.4 < heroPara.getBoundingClientRect().bottom) {
+//       heroImg.style.display = "none";
+//     } else {
+//       heroImg.style.display = "block";
+//     }
+//   } else {
+//     // Without this img stays hidden when media query kicks in.
+//     heroImg.style.display = "block";
+//   }
+// };
+// checkOverlap();
+// window.addEventListener("resize", checkOverlap);
 
 //////////////////////////// NAV CARDS Z-INDEX ////////////////////////////
 
@@ -93,13 +93,13 @@ window.addEventListener("scroll", () => {
   }
 
   // HERO IMG OPACITY
-  heroImg.style.opacity = `${Math.floor(
-    100 - (document.documentElement.scrollTop / window.innerHeight) * 200
-  )}%`;
-  heroImg.style.top = `${Math.floor(
-    window.innerHeight * 0.4 +
-      (document.documentElement.scrollTop / window.innerHeight) * 500
-  )}px`;
+  // heroImg.style.opacity = `${Math.floor(
+  //   100 - (document.documentElement.scrollTop / window.innerHeight) * 200
+  // )}%`;
+  // heroImg.style.top = `${Math.floor(
+  //   window.innerHeight * 0.4 +
+  //     (document.documentElement.scrollTop / window.innerHeight) * 500
+  // )}px`;
 });
 
 navButton.addEventListener("click", () => {
