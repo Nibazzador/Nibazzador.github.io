@@ -417,7 +417,10 @@ nav a h3 {
   animation: loadball 1.5s linear 1s infinite;
 }
 
-.videogalleria {
+.videogalleria,
+iframe {
+  width: 100%;
+  height: auto;
   aspect-ratio: 16/9;
   margin-bottom: 0.5rem;
 }
