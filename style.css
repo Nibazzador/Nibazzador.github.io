@@ -191,10 +191,10 @@ nav {
 /* HERO */
 #hero {
   overflow-x: hidden;
-  background-image: url(Media/hero-bg.JPG);
-  background-size: cover;
-  background-position: right;
-  background-attachment: fixed;
+  background-image: url(Media/hero-bg.JPG), url(Media/hero-bg-lowres.JPG);
+  background-size: cover, cover;
+  background-position: right, right;
+  background-attachment: fixed, fixed;
 }
 h1,
 .hero-p {
